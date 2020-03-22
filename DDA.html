@@ -14,7 +14,7 @@
       <nav class="navbar fixed-top navbar-light bg-light">
         <div class="container">
           <h2>
-            <a class="navbar-brand" href="#">Grafikom</a>
+            <a class="navbar-brand" href="index.html">Grafikom</a>
           </h2>
           
           <nav class="nav nav-masthead justify-content-center">
@@ -43,7 +43,7 @@
             </div>
           </div>
         </form>
-        <button type="button" class="btn btn-primary" style="margin-top: 25px;">Hitung</button>
+        <button type="button" class="btn btn-primary" style="margin-top: 25px;" onclick="dda()">Hitung</button>
 
         <!-- <pre id="out"></pre> -->
       </div>
@@ -61,6 +61,7 @@
       </p>
     </div>
 
+    <script src="js/main.js"></script>
     <script>
       function print(s) { document.getElementById('out').innerHTML += s; }
       function println(s) { document.getElementById('out').innerHTML += s + '\n'; }
