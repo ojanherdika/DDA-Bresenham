@@ -10,10 +10,10 @@ window.onload = function () {
 
     var x, y, x1, y1, x2, y2, dx, dy, steps, xIncr, yIncr;
 
-    x1 = parseInt(prompt("Masukan nilai x1", 150));
-    y1 = parseInt(prompt("Masukan nilai y1", 150));
-    x2 = parseInt(prompt("Masukan nilai x2", 300));
-    y2 = parseInt(prompt("Masukan nilai y2", 300));
+    // x1 = parseInt(prompt("Masukan nilai x1", 150));
+    // y1 = parseInt(prompt("Masukan nilai y1", 150));
+    // x2 = parseInt(prompt("Masukan nilai x2", 300));
+    // y2 = parseInt(prompt("Masukan nilai y2", 300));
 
     dx = x2 - x1;
     dy = y2 - y1;

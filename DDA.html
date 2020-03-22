@@ -1,32 +1,84 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<head>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
     <title>DDA</title>
-</head>
+  </head>
+  <body>
+      <nav class="navbar fixed-top navbar-light bg-light">
+        <div class="container">
+          <h2>
+            <a class="navbar-brand" href="#">Grafikom</a>
+          </h2>
+          
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link active" href="index.html">Home</a>
+            <a class="nav-link" href="about.html">About</a>
+          </nav>
+        </div>
+      </nav>
 
-<body>
-    <header>
-        <h5> Digital Differential Analyzer (DDA)
-            <a style="color:#888"
-                href="https://en.m.wikipedia.org/wiki/Digital_differential_analyzer_(graphics_algorithm)">Click here</a>
-        </h5>
-    </header>
-    <div class="info">
-        Dalam grafikom, algoritma dasar pertama adalah Algoritma Digital Differential Analyzer. Untuk membuat garis anda
-        perlu memerlukan 2 titik. Yaitu titik awal dan titik akhir.
+    <div class="isi">
+      <div class="container">
+        <h2 style="padding-bottom: 25px">Algoritma DDA</h2>
+        <form>
+          <div class="row">
+            <div class="col-sm-3">
+              <input type="number" class="form-control" id="x1" placeholder="Masukan X1" name="x1">
+            </div>
+            <div class="col-sm-3">
+              <input type="number" class="form-control" id="y1" placeholder="Masukan Y1" name="y1">
+            </div>
+            <div class="col-sm-3">
+              <input type="number" class="form-control" id="x2" placeholder="Masukan X2" name="x2">
+            </div>
+            <div class="col-sm-3">
+              <input type="number" class="form-control" id="y2" placeholder="Masukan Y2" name="y2">
+            </div>
+          </div>
+        </form>
+        <button type="button" class="btn btn-primary" style="margin-top: 25px;">Hitung</button>
 
+        <!-- <pre id="out"></pre> -->
+      </div>
+
+      
     </div>
-    <canvas id="canvas"></canvas>
-    <footer>
-        <h5 class="footer">Made with <span style="color: #fc3f5e; font-size: 1.3em;">&hearts;</span></h5>
-        <h6 class="footer">by <a style="text-decoration: none; color: inherit;"
-                href="https://github.com/ojanherdika">Fauzan </a> <a style="text-decoration: none; color: inherit;"
-                href="https://github.com/zanuarts">& Zanuar &copy;</a></h6>
-    </footer>
-    <script src="js/DDA.js"></script>
-</body>
+    
 
+    <div class="footer">
+      <p>Copyright 2020</p>
+      <p>By
+        <a href="">Fauzan</a>
+        &
+        <a href="">Zanuar</a>
+      </p>
+    </div>
+
+    <script>
+      function print(s) { document.getElementById('out').innerHTML += s; }
+      function println(s) { document.getElementById('out').innerHTML += s + '\n'; }
+
+      var size = 5,
+          i, j;
+
+      for (i = 0; i < size; i++) {
+          for (j = 0; j < size; j++) {
+              print("*");
+          }
+          println("");
+      }
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
 </html>
