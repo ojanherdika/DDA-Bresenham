@@ -15,7 +15,18 @@ function dda(){
 
   xIncr = dx / steps;
   yIncr = dy / steps;
+
 }
+
+function bressenham(){
+  var x1 = document.getElementById("x1").value;
+  var y1 = document.getElementById("y1").value;
+  var x2 = document.getElementById("x2").value;
+  var y2 = document.getElementById("y2").value;
+
+
+}
+
 function tableCreate() {
   var body = document.getElementsByTagName('body')[0];
   var tbl = document.createElement('table');
