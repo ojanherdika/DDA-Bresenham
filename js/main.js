@@ -1,10 +1,11 @@
-const xSize = 75;
-const ySize = 75;
+// generate table
+const xSize = 50;
+const ySize = 50;
 let container = document.querySelector('.table-container');
 let tableContent = "<table>";
-for (let row=ySize; row>=0; row--) {
+for (let row=ySize; row>=1; row--) {
     tableContent += "<tr>";
-    for(let col=0; col<=xSize; col++) {
+    for(let col=1; col<=xSize; col++) {
         tableContent += '<td class="pixel" id="${col},${row}""></td>';
     }
     tableContent += "</tr>";
@@ -26,19 +27,25 @@ function dda(){
   dx = x2 - x1;
   dy = y2 - y1;
 
-  if (dx > dy) {
-      steps = Math.abs(dx);
-  } else {
+  if (dy > dx) {
       steps = Math.abs(dy);
+  } else {
+      steps = Math.abs(dx);
   }
 
   xIncr = dx / steps;
   yIncr = dy / steps;
 
-  var i;
-  // for (i=0; i<x1; i++){
+  var i,x,y;
+  for(i=0; i<steps; i++){
+    Math.round(x);
+    Math.round(y);
+    x += xIncr;
+    y += yIncr;
+    
+  }
+  
 
-  // }
 
 }
 
