@@ -27,6 +27,7 @@
     <div class="isi">
       <div class="container">
         <h2 style="padding-bottom: 25px">Algoritma Bressenham</h2>
+        <div class="tbl table-container"></div>
         <form>
           <div class="row">
             <div class="col-sm-3">
@@ -44,11 +45,7 @@
           </div>
         </form>
         <button type="button" class="btn btn-primary" style="margin-top: 25px;">Hitung</button>
-
-        <!-- <pre id="out"></pre> -->
       </div>
-
-      
     </div>
     
 
@@ -61,20 +58,7 @@
       </p>
     </div>
 
-    <script>
-      function print(s) { document.getElementById('out').innerHTML += s; }
-      function println(s) { document.getElementById('out').innerHTML += s + '\n'; }
-
-      var size = 5,
-          i, j;
-
-      for (i = 0; i < size; i++) {
-          for (j = 0; j < size; j++) {
-              print("*");
-          }
-          println("");
-      }
-    </script>
+    <script src="js/main.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

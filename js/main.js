@@ -1,3 +1,22 @@
+const xSize = 75;
+const ySize = 75;
+let container = document.querySelector('.table-container');
+let tableContent = "<table>";
+for (let row=ySize; row>=0; row--) {
+    tableContent += "<tr>";
+    for(let col=0; col<=xSize; col++) {
+        tableContent += '<td class="pixel" id="${col},${row}""></td>';
+    }
+    tableContent += "</tr>";
+}
+tableContent += "</table>";
+container.innerHTML += tableContent;
+
+const fillPixel = (elem, color) => {
+  elem.style.background = color;
+}
+
+
 function dda(){
   var x1 = document.getElementById("x1").value;
   var y1 = document.getElementById("y1").value;
@@ -16,10 +35,10 @@ function dda(){
   xIncr = dx / steps;
   yIncr = dy / steps;
 
-  var i,
-  for (i=0; i<x1; i++){
+  var i;
+  // for (i=0; i<x1; i++){
 
-  }
+  // }
 
 }
 
@@ -33,15 +52,3 @@ function bressenham(){
 }
 
 
-
-let container = document.querySelector('.table-container')
-let tableContent = "<table>"
-for (let row=ySize; row>=0; row--) {
-    tableContent += "<tr>";
-    for(let col=0; col<=xSize; col++) {
-        tableContent += `<td class="pixel" id="${col},${row}" onclick="select(${col}, ${row})"></td>`;
-    }
-    tableContent += "</tr>";
-}
-tableContent += "</table>";
-container.innerHTML += tableContent;
