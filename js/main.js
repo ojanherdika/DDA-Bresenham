@@ -1,12 +1,13 @@
 // generate table
 const xSize = 50;
 const ySize = 50;
+const green = "#00ff00";
 let container = document.querySelector('.table-container');
 let tableContent = "<table>";
 for (let row=ySize; row>=1; row--) {
     tableContent += "<tr>";
     for(let col=1; col<=xSize; col++) {
-        tableContent += '<td class="pixel" id="${col},${row}""></td>';
+        tableContent += `<td class="pixel" id="${col},${row}""></td>`;
     }
     tableContent += "</tr>";
 }
@@ -38,6 +39,8 @@ function dda(){
 
   var i,x,y;
   for(i=0; i<steps; i++){
+    let elem = document.getElementById(`${Math.round(x)},${Math.round(y)}`);
+    fillPixel(elem,green);
     Math.round(x);
     Math.round(y);
     x += xIncr;
