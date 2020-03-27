@@ -24,9 +24,16 @@ function dda(){
   var y1 = parseInt(document.getElementById("y1").value);
   var x2 = parseInt(document.getElementById("x2").value);
   var y2 = parseInt(document.getElementById("y2").value);
-  
+
+  console.log(x1);
+  console.log(x2);
+  console.log(y1);
+  console.log(y2);
+
   var dx = x2 - x1;
   var dy = y2 - y1;
+
+  var steps;
 
   if (dy > dx) {
       steps = Math.abs(dy);
@@ -34,12 +41,22 @@ function dda(){
       steps = Math.abs(dx);
   }
 
-  xIncr = dx / steps;
-  yIncr = dy / steps;
+  console.log("steps" + steps)
+
+  console.log(dx);
+  console.log(dy);
+
+  var xIncr = dx / steps;
+  var yIncr = dy / steps;
+
+  console.log(xIncr);
+  console.log(yIncr);
   
   console.log("success");
 
-  var i, x, y;
+  var i;
+  var x = 0;
+  var y = 0;
   for(i=0; i<steps; i++){
     // document.getElementById(`${Math.round(x)},${Math.round(y)}`).style.background=green;
     // fillPixel(elem,green);
@@ -51,9 +68,6 @@ function dda(){
     console.log(x);
     console.log(y);
   }
-  
-
-
 }
 
 function bressenham(){
