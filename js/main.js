@@ -25,11 +25,6 @@ function dda(){
   var x2 = parseInt(document.getElementById("x2").value);
   var y2 = parseInt(document.getElementById("y2").value);
 
-  console.log(x1);
-  console.log(x2);
-  console.log(y1);
-  console.log(y2);
-
   var dx = x2 - x1;
   var dy = y2 - y1;
 
@@ -41,18 +36,8 @@ function dda(){
       steps = Math.abs(dx);
   }
 
-  console.log("steps" + steps)
-
-  console.log(dx);
-  console.log(dy);
-
   var xIncr = dx / steps;
   var yIncr = dy / steps;
-
-  console.log(xIncr);
-  console.log(yIncr);
-  
-  console.log("success");
 
   var i;
   var x = x1;
@@ -65,43 +50,42 @@ function dda(){
     Math.round(y);
     x += xIncr;
     y += yIncr;
-    console.log(x);
-    console.log(y);
   }
 }
 
 function bressenham(){
-  var x1 = document.getElementById("x1").value;
-  var y1 = document.getElementById("y1").value;
-  var x2 = document.getElementById("x2").value;
-  var y2 = document.getElementById("y2").value;
+  var x0 = parseInt(document.getElementById("x1").value);
+  var y0 = parseInt(document.getElementById("y1").value);
+  var x1 = parseInt(document.getElementById("x2").value);
+  var y1 = parseInt(document.getElementById("y2").value);
 
-  var dx = x2 - x1;
-  var dy = y2 - y1;
+  var dx = Math.abs(x1 - x0);
+  var dy = Math.abs(y1 - y0);
 
-  var param = (2 * dy) - dx;
+  var sx = (x0 < x1) ? 1 : -1;
+  var sy = (y0 < y1) ? 1 : -1;
 
-  var i; 
-  var x = x1; 
-  var y = y1;
-  for (i=0; i<dx; i++){
-    if (param < 0){
-      x = x + 1;
-      y = y;
-      param = param + (2 * dy);
+  var err = dx - dy;
+
+  while(true) {
+    elem = document.getElementById(`${Math.round(x0)},${Math.round(y0)}`);
+    fillPixel(elem,green);
+
+    if ((x0 === x1) && (y0 === y1)) break;
+    
+    var e2 = 2*err;
+    
+    if (e2 > -dy) {
+      err -= dy; x0  += sx; 
     }
-    else{
-      x = x + 1;
-      y = y + 1;
-      param = param + ((2 * dy) - (2 * dx));
+    if (e2 < dx) {
+      err += dx; y0  += sy; 
     }
-    console.log(x);
-    console.log(y);
-    console.log(param);
   }
-  
+}
 
-
+function reset(){
+  location.reload();
 }
 
 
