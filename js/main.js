@@ -55,11 +55,11 @@ function dda(){
   console.log("success");
 
   var i;
-  var x = 0;
-  var y = 0;
+  var x = x1;
+  var y = y1;
   for(i=0; i<steps; i++){
-    // document.getElementById(`${Math.round(x)},${Math.round(y)}`).style.background=green;
-    // fillPixel(elem,green);
+    elem = document.getElementById(`${Math.round(x)},${Math.round(y)}`);
+    fillPixel(elem,green);
     
     Math.round(x);
     Math.round(y);
